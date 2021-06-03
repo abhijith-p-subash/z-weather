@@ -1,0 +1,54 @@
+<%- include("partials/header"); %>  
+
+
+<div class="search-root col-sm-12">
+    <form class="form-inline " method="POST" action="/">
+        <input name="cityName" class="search-input form-inline" type="text" autocomplete="off" placeholder="City name">
+        <button type="submit" class="search-btn btn btn-sm btn-outline-primary "><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form>
+</div> 
+<div>
+    <% if (error === "error"){ %> 
+    <div id="theAlert" class="alert alert-dismissible fade show" role="alert">
+        <strong>Sorry location not found ☹....!</strong> Please enter vaild location or check your spelling..
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>  
+    <% } %> 
+</div>
+<div class="container">
+    <div class="root">
+        <div class="row">
+            <% if (homeData) { %>
+            <div class="segement col-lg-3 col-md-6 col-sm-12">
+                <h1 id="location" ><%= homeData.name %></h1>    
+                <h4 id="day"><%= homeDay %> </h4>
+                <h5 id="date"><%= homeDate %> </h5>
+                <h5 id="time"><%= homeTime %> </h5>
+                
+            </div>
+            <div class="segement col-lg-3 col-md-6 col-sm-12 text-center">
+                <h3><%= homeData.weather[0].main %> </h3>
+                <img  src= "<%= homeIcon %>" alt="icon">
+                
+            </div>
+                <div class="segement col-lg-3 col-md-6 col-sm-12 text-center">
+                <h1><span id="temp-value"> <%= homeData.main.temp %></span><sup><span id="temp-unit"><%= temp_unit %></span></sup></h1>
+                <h6>Max Temperature: <%= homeData.main.temp_max %><span id="temp-unit"><%= temp_unit %></span>  </h6>
+                <h6>Min Temperature: <%= homeData.main.temp_min %><span id="temp-unit"><%= temp_unit %></span>  </h6>
+                <h4> <%= homeData.weather[0].description %>  </h4>
+            </div>
+            <div class="segement col-lg-3 col-md-6 col-sm-12">
+                <h6>Humidity:  <%= homeData.main.humidity %> % </h6>
+                <h6>Wind speed:  <%= homeData.wind.speed %> m/s </h6>
+                <h6>Pressure: <%= homeData.main.pressure  %> hPa </h6>
+            </div>
+            <% } %> 
+            
+        </div>
+    </div>   
+</div>
+
+
+<%- include("partials/footer") %> 

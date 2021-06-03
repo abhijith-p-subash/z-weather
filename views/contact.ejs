@@ -1,0 +1,70 @@
+<%- include("partials/header") %> 
+
+<div class="container search-root">
+    <div class="settings">
+        <h3>Contact Us</h3>
+        <hr>
+           
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <h5>Send feedback</h5>
+                <form action="/contact" method="POST">
+                    <div class="from-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" name="Fname" placeholder="Enter Name">
+                    </div>
+                    <div class="from-group">
+                        <label for="Email">Email</label>
+                        <input aria-describedby="emailHelp" class="form-control" type="email" name="Femail" placeholder="name@example.com">
+                        <small style="color: rgb(224, 224, 224);" id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="from-group">
+                        <label for="Experience">Experience</label>
+                        <br>
+                        <select name="feedback_contact" class="form-control mdb-select md-form">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">😀 Excellent </option>
+                            <option value="2">🙂 Average </option>
+                            <option value="3">😡 Poor </option>
+                        </select>
+                    </div>
+                    <div class="set-btn">
+                        <button style="margin-top: 1%;" type="submit" class="btn btn-sm btn-outline-light ">Submit</button>
+                    </div>
+                </form>
+               
+         
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div>
+                    <h5>Abhijith P Subash</h5>
+                    <p>Developer</p>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <a style="color: #fff; text-decoration: none;" href="mailto:abhijith.p.subash@gmail.com">abhijith.p.subash@gmail.com</a>
+                    <br>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <a style="color: #fff; text-decoration: none;" href="mailto:zetiny.official@gmail.com">zetiny.official@gmail.com</a>
+                    <hr>
+
+
+                </div>
+                <h5>Follow:</h5>
+                <div class="social">
+                    <div class="social-icon">
+                        <a target="null" href="https://www.linkedin.com/in/abhijith-p-subash-the-engineer/"><i  class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="social-icon">
+                        <a target="null" href="https://github.com/sixbeeshades"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="social-icon">
+                        <a target="null" href="https://www.instagram.com/sixbee_shades/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+              
+    </div>
+</div>
+
+
+<%- include('partials/footer') %> 

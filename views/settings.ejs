@@ -1,0 +1,31 @@
+<%- include("partials/header") %> 
+
+<div class="container search-root">
+    <div class="settings">
+        <div>
+           <h3>Options</h3>
+           <hr>
+           <h5>Chosse a Mode</h5>
+           <form action="/settings" method="POST">
+                <input id="dark" type="radio" name="mode" value="dark"  <%= dark %> >
+                <label for="dark">Dark</label><br>
+                <input id="light" type="radio" name="mode" value="light"  <%= light %> >
+                <label for="dark">Light</label><br>
+                <hr>
+
+                    <h5>Show temperature in:</h5>
+
+                <input type="radio" name="tempU" value="fahrenheit" <%= radio_fah %> >
+                <label for="dark">Fahrenheit</label>
+                <input type="radio" name="tempU" value="celsius"<%= radio_cel %> >
+                <label for="dark">Celsius</label>
+                <hr>
+                <div class="set-btn">
+                    <button type="submit" class="btn btn-outline-light ">Save</button>
+                </div>
+           </form>    
+    </div>
+</div>
+
+
+<%- include('partials/footer') %> 
